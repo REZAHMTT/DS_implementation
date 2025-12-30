@@ -1,4 +1,4 @@
-class Queue{
+public class Queue {
     private int[] array;
     private int front;
     private int rear;
@@ -12,15 +12,18 @@ class Queue{
         rear = -1;
         size = 0;
     }
+
     public void enqueue(int item){
         if (isFull()){
-            System.out.println("Queue is full");
+            System.out.println("queue is full");
             return;
         }
-        rear=(rear+1)%STRG;
-        array[rear]=item;
+        rear = (rear + 1) % STRG;
+        array[rear] = item;
         size++;
+        System.out.println(item + "->inserted");
     }
+
     public int dequeue(){
         if (isEmpty()){
             System.out.println("Queue is empty");
@@ -29,11 +32,13 @@ class Queue{
         int removedItem = array[front];
         front = (front + 1) % STRG;
         size--;
+        System.out.println(removedItem + "->removed");
+
         return removedItem;
     }
     public int peek(){
         if (isEmpty()) {
-            System.out.println("Queue is empty");
+            System.out.println("empty");
             return -1;
         }
         return array[front];

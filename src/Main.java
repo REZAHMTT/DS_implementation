@@ -9,7 +9,7 @@ public class Main {
         System.out.println(test);
         myS.pop();
  //--------------------------queue test
-        System.out.println("---------\nQueue Test");
+        System.out.println("---------\nQueue Test\n-------");
         Queue myQ = new Queue(3);
         myQ.enqueue(34);
         myQ.enqueue(5);
@@ -17,5 +17,12 @@ public class Main {
         myQ.isEmpty();
         myQ.dequeue();
         myQ.dequeue();
+  //------------------------trie test
+        System.out.println("--------\ntrie test\n-------");
+        Trie trie = new Trie();
+        trie.insert("reza");
+        trie.insert("repo");
+        System.out.println(trie.search("reza"));
+        System.out.println(trie.search("repo"));
     }
 }

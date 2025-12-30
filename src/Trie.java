@@ -1,7 +1,7 @@
-class TrieNode {
+class TrieNode{
     TrieNode[] children;
     boolean isEndOfWord;
-    public TrieNode() {
+    public TrieNode(){
 
         children = new TrieNode[26];
         isEndOfWord = false;
@@ -9,13 +9,12 @@ class TrieNode {
 }
 public class Trie{
     private TrieNode root;
-
     public Trie(){
         root=new TrieNode();
     }
     public void insert(String word){
-        TrieNode current = root;
-        for (int i = 0; i < word.length(); i++) {
+        TrieNode current=root;
+        for (int i = 0; i <word.length(); i++) {
             char ch = word.charAt(i);
             if (current.children[ch - 'a'] == null){
                 current.children[ch - 'a'] = new TrieNode();
@@ -29,17 +28,16 @@ public class Trie{
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
 
-            if (current.children[ch - 'a'] == null){
+            if (current.children[ch - 'a']==null){
                 return false;
             }
             current = current.children[ch - 'a'];
         }
         return current != null && current.isEndOfWord;
     }
-
-    public boolean startsWith(String prefix) {
+    public boolean startsWith(String prefix){
         TrieNode current = root;
-        for (int i = 0; i < prefix.length(); i++) {
+        for (int i = 0; i < prefix.length(); i++){
             char ch = prefix.charAt(i);
             if (current.children[ch - 'a'] == null){
                 return false;
